@@ -21,8 +21,6 @@ export const PostListModel = types
         self.isLoading = true
         self.pageNo = 0
         const response: GetPostResult = yield api.getPost(self.pageNo)
-        console.log("response====", response)
-
         if (response.kind === "ok") {
           const data = response.post.hits
           self.posts = data
